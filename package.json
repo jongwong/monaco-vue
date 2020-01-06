@@ -1,5 +1,5 @@
 {
-  "name": "monaco-vue",
+  "name": "monaco-vue-extra",
   "version": "0.0.1",
   "description": "vue language plugin for the Monaco Editor",
   "scripts": {
@@ -15,12 +15,18 @@
   },
   "author": "Microsoft Corporation",
   "license": "MIT",
+  "keywords": [
+    "monaco-vue",
+    "monaco",
+    "vue",
+    "language"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jongwong/monaco-vue"
+    "url": "https://github.com/jongwong/monaco-vue-extra"
   },
   "bugs": {
-    "url": "https://github.com/jongwong/monaco-vue/issues"
+    "url": "https://github.com/jongwong/monaco-vue-extra/issues"
   },
   "devDependencies": {
     "monaco-editor-core": "0.19.0",
