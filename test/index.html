@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link
+      rel="stylesheet"
+      data-name="vs/editor/editor.main"
+      href="../node_modules/monaco-editor-core/dev/vs/editor/editor.main.css"
+    />
+  </head>
+  <body>
+    <h2>Monaco Editor HTML test page</h2>
+    <div
+      id="container"
+      style="width:800px;height:600px;border:1px solid grey"
+    ></div>
+
+    <script>
+      // Loading basic-languages to get the html language definition
+      var paths = {
+        "vs/basic-languages": "../node_modules/monaco-languages/release/dev",
+        "vs/language/vue": "../release/dev",
+
+        vs: "../node_modules/monaco-editor-core/dev/vs"
+      };
+      if (document.location.protocol === "http:") {
+        // Add support for running local http server
+        let testIndex = document.location.pathname.indexOf("/test/");
+        if (testIndex !== -1) {
+          let prefix = document.location.pathname.substr(0, testIndex);
+          paths["vs/language/vue"] = prefix + "/release/dev";
+        }
+      }
+      var require = {
+        paths: paths
+      };
+    </script>
+    <script src="../node_modules/monaco-editor-core/dev/vs/loader.js"></script>
+    <script src="../node_modules/monaco-editor-core/dev/vs/editor/editor.main.nls.js"></script>
+    <script src="../node_modules/monaco-editor-core/dev/vs/editor/editor.main.js"></script>
+
+    <script>
+      require([
+        "../base-language/vue/monaco.contribution",
+        "vs/language/vue/monaco.contribution"
+      ], function() {
+        var editor = monaco.editor.create(
+          document.getElementById("container"),
+          {
+            value: [
+              "<template>",
+              '	<div class="hello">Hello {{who}}</div>',
+              "<\/template>",
+              "",
+              "<script>",
+              "	module.exports = {",
+              "		data: function() {",
+              "			return {",
+              '				who: "world"',
+              "			}",
+              "		}",
+              "	}",
+              "<\/script>",
+              "",
+              '<style lang="css">',
+              "	.hello {",
+              "		background-color: #ffe;",
+              "	}",
+              "</style>",
+              ""
+            ].join("\n"),
+            language: "vue",
+            theme: "vs-dark"
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
