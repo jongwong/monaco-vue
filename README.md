@@ -1,13 +1,13 @@
-# Monaco HTML
+# Monaco Vue
 
-HTML language plugin for the Monaco Editor. It provides the following features when editing HTML files:
-* Code completion
+Vue language plugin for the Monaco Editor. It provides the following features when editing vue files:
+* Code completion(javascript css html for vue)
 * Formatting
 * Document Highlights
 * Link detection
 * Syntax highlighting
 
-Internally the HTML plugin uses the [vscode-html-languageservice](https://github.com/Microsoft/vscode-html-languageservice)
+Internally the Vue plugin uses the [vscode-html-languageservice](https://github.com/Microsoft/vscode-html-languageservice)
 node module, providing the implementation of the functionally listed above. The same module is also used
 in [Visual Studio Code](https://github.com/Microsoft/vscode) to power the HTML editing experience.
 
@@ -22,11 +22,11 @@ This npm module is bundled and distributed in the [monaco-editor](https://www.np
 
 ## Development
 
-* `git clone https://github.com/Microsoft/monaco-html`
-* `cd monaco-html`
+* `git clone https://github.com/jongwong/monaco-vue-extra`
+* `cd monaco-vue`
 * `npm install .`
 * `npm run prepublishOnly`
-* open `$/monaco-html/test/index.html` in your favorite browser.
+* open `$/monaco-vue/test/index.html` in your favorite browser.
 
 ## License
-[MIT](https://github.com/Microsoft/monaco-html/blob/master/LICENSE.md)
+[MIT](https://github.com/Microsoft/monaco-vue/blob/master/LICENSE.md)
